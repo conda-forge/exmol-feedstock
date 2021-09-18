@@ -29,6 +29,7 @@ requirements:
     - scikit-learn
     - selfies
     - tqdm
+    - skunk >=0.4.0
 
 test:
   imports:
