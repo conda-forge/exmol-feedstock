@@ -1,5 +1,5 @@
 {% set name = "exmol" %}
-{% set version = "0.3.2" %}
+{% set version = "0.4.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/exmol-{{ version }}.tar.gz
-  sha256: 6239a97c66ed67ac1500ed8e474ac018ad399f7766fd4207c91226145f99d9d8
+  sha256: 94fc939816108e2849a16dd5df7447876ac5d02223f50fb6c049bfc255aa67fc
 
 build:
   number: 0
@@ -29,6 +29,7 @@ requirements:
     - scikit-learn
     - selfies
     - tqdm
+    - skunk >=0.4.0
 
 test:
   imports:
