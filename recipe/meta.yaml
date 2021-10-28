@@ -27,7 +27,7 @@ requirements:
     - rdkit
     - requests
     - scikit-learn
-    - selfies
+    - selfies <2
     - tqdm
     - skunk >=0.4.0
 
