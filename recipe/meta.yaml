@@ -1,5 +1,5 @@
 {% set name = "exmol" %}
-{% set version = "0.5.1" %}
+{% set version = "0.5.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/exmol-{{ version }}.tar.gz
-  sha256: c2d23487925990b63d9af2e7219a0afa6f70b1c6db563d52b7137324becff31b
+  sha256: 9f349f04e8b609962c520900706011f41e441f79c0adc031ce36b8c582efbf3f
 
 build:
   number: 0
