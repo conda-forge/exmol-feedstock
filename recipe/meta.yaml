@@ -1,5 +1,5 @@
 {% set name = "exmol" %}
-{% set version = "0.6.0" %}
+{% set version = "1.0.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/exmol-{{ version }}.tar.gz
-  sha256: 1cb73246cc8e4113a2ea2c202a247abee1d7ab9e6b7c3d3f1d7a195ba105cf59
+  sha256: 1d0131543e759243888091cde5a9f30ca3b249b365954eb3b0441f3aee3394d4
 
 build:
   number: 0
@@ -19,24 +19,28 @@ requirements:
   host:
     - pip
     - python >=3.6
-  run:
+  run:   
+    - python >=3.6
+    - selfies >=2.0.0
     - matplotlib-base
     - numpy
-    - python >=3.6
+    - requests
+    - tqdm
     - ratelimit
     - rdkit
-    - requests
     - scikit-learn
-    - selfies <2
-    - tqdm
     - skunk >=0.4.0
 
 test:
   imports:
     - exmol
     - exmol.stoned
-  requires:
-    - pip
+  # can't run `pip` check since `rdkit-pypi`
+  # is called `rdkit` on conda
+#   requires:
+#     - pip
+#   commands:
+#     - pip check
 
 about:
   home: https://ur-whitelab.github.io/exmol/
