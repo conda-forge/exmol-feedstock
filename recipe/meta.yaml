@@ -35,10 +35,12 @@ test:
   imports:
     - exmol
     - exmol.stoned
-  requires:
-    - pip
-  commands:
-    - pip check
+  # can't run `pip` check since `rdkit-pypi`
+  # is called `rdkit` on conda
+#   requires:
+#     - pip
+#   commands:
+#     - pip check
 
 about:
   home: https://ur-whitelab.github.io/exmol/
