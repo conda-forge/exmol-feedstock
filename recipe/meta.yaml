@@ -29,7 +29,7 @@ requirements:
     - ratelimit
     - rdkit,
     - scikit-learn
-    - skunk> =0.4.0
+    - skunk >=0.4.0
 
 test:
   imports:
