@@ -19,17 +19,17 @@ requirements:
   host:
     - pip
     - python >=3.6
-  run:
+  run:   
+    - python >=3.6
+    - selfies >=2.0.0
     - matplotlib-base
     - numpy
-    - python >=3.6
-    - ratelimit
-    - rdkit
     - requests
-    - scikit-learn
-    - selfies <2
     - tqdm
-    - skunk >=0.4.0
+    - ratelimit
+    - rdkit,
+    - scikit-learn
+    - skunk> =0.4.0
 
 test:
   imports:
@@ -37,6 +37,13 @@ test:
     - exmol.stoned
   requires:
     - pip
+    - pytest
+    - pytest-cov
+  source_files:
+    - tests/
+  commands:
+    - pip check
+    - pytest tests/
 
 about:
   home: https://ur-whitelab.github.io/exmol/
