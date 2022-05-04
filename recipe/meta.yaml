@@ -1,5 +1,5 @@
 {% set name = "exmol" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/exmol-{{ version }}.tar.gz
-  sha256: 1d0131543e759243888091cde5a9f30ca3b249b365954eb3b0441f3aee3394d4
+  sha256: 0338329500703411917c43d4c345d8e1d9edd639f185b456e8e7653d76c4ccc8
 
 build:
   number: 0
@@ -19,7 +19,7 @@ requirements:
   host:
     - pip
     - python >=3.6
-  run:   
+  run:
     - python >=3.6
     - selfies >=2.0.0
     - matplotlib-base
