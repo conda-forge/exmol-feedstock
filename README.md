@@ -1,11 +1,11 @@
-About exmol
-===========
+About exmol-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/exmol-feedstock/blob/main/LICENSE.txt)
 
 Home: https://ur-whitelab.github.io/exmol/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/exmol-feedstock/blob/main/LICENSE.txt)
 
 Summary: Counterfactual generation with STONED SELFIES
 
