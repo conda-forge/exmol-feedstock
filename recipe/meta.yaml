@@ -7,20 +7,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/exmol-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/exmol-{{ version }}.tar.gz
   sha256: 52982a72ae865f5111a1efe73aac0584339490a77fc9dc51bde3f7fd36051c28
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - selfies >=2.0.0
     - matplotlib-base
     - numpy
@@ -32,6 +32,8 @@ requirements:
     - skunk >=0.4.0
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - exmol
     - exmol.stoned
