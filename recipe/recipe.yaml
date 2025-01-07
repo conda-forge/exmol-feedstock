@@ -1,0 +1,55 @@
+#   requires:
+#     - pip
+#   commands:
+#     - pip check
+context:
+  name: exmol
+  version: 2.2.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/exmol-${{ version }}.tar.gz
+  sha256: 52982a72ae865f5111a1efe73aac0584339490a77fc9dc51bde3f7fd36051c28
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+  run:
+    - python >=${{ python_min }}
+    - selfies >=2.0.0
+    - matplotlib-base
+    - numpy
+    - requests
+    - tqdm
+    - ratelimit
+    - rdkit
+    - scikit-learn
+    - skunk >=0.4.0
+
+tests:
+  - python:
+      imports:
+        - exmol
+        - exmol.stoned
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+about:
+  summary: Counterfactual generation with STONED SELFIES
+  license: MIT
+  license_file: LICENSE
+  homepage: https://ur-whitelab.github.io/exmol/
+
+extra:
+  recipe-maintainers:
+    - hadim
