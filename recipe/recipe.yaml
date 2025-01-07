@@ -1,10 +1,6 @@
-#   requires:
-#     - pip
-#   commands:
-#     - pip check
 context:
   name: exmol
-  version: 2.2.0
+  version: 3.1.0
 
 package:
   name: ${{ name|lower }}
@@ -12,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/exmol-${{ version }}.tar.gz
-  sha256: 52982a72ae865f5111a1efe73aac0584339490a77fc9dc51bde3f7fd36051c28
+  sha256: c792c023400ce8f9b87708f8bdf3c76733d6979608a83870965e762adc6eb1c4
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
 
@@ -23,10 +19,10 @@ requirements:
   host:
     - pip
     - python ${{ python_min }}.*
+    - setuptools
   run:
     - python >=${{ python_min }}
     - selfies >=2.0.0
-    - matplotlib-base
     - numpy
     - requests
     - tqdm
@@ -34,6 +30,10 @@ requirements:
     - rdkit
     - scikit-learn
     - skunk >=0.4.0
+    - synspace
+    - openai
+    - matplotlib-base
+    - scipy
 
 tests:
   - python:
@@ -41,9 +41,7 @@ tests:
         - exmol
         - exmol.stoned
       python_version: ${{ python_min }}.*
-  - requirements:
-      run:
-        - python ${{ python_min }}.*
+
 about:
   summary: Counterfactual generation with STONED SELFIES
   license: MIT
