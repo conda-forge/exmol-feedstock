@@ -1,6 +1,6 @@
 context:
   name: exmol
-  version: "3.2.0"
+  version: "3.2.1"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/exmol-${{ version }}.tar.gz
-  sha256: fbbfe81a97e7a7ce0d5b1a917a2a9526ec364b82750d6798a1958132a36032fd
+  sha256: 80bb701d0dee7456d6a3dc7ef3d416ca010406cee7672ff628af4223adc4cc9d
 
 build:
   number: 0
